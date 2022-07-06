@@ -67,7 +67,7 @@ const lightTheme = createTheme({
           borderRadius: "500px",
           textTransform: "none",
           fontWeight: "600",
-          padding: "0.6em 1.5em",
+          padding: "0.5em 1em",
         },
       },
       variants: [
@@ -122,31 +122,6 @@ const lightTheme = createTheme({
         },
       ],
     },
-    MuiTextField: {
-      styleOverrides: {
-        root: {
-          "& .MuiOutlinedInput-root": { borderRadius: "500px" },
-        },
-      },
-      variants: [
-        {
-          props: { variant: "outlined", color: "primary" },
-          style: textFieldStyle("outlined", "primary"),
-        },
-        {
-          props: { variant: "outlined", color: "secondary" },
-          style: textFieldStyle("outlined", "secondary"),
-        },
-        {
-          props: { variant: "standard", color: "primary" },
-          style: textFieldStyle("standard", "primary"),
-        },
-        {
-          props: { variant: "standard", color: "secondary" },
-          style: textFieldStyle("standard", "secondary"),
-        },
-      ],
-    },
     MuiPaper: {
       variants: [
         {
@@ -158,6 +133,7 @@ const lightTheme = createTheme({
             backgroundColor: "#fff",
             width: "100vw",
             minHeight: "100vh",
+            overflowX:"hidden"
           },
         },
       ],

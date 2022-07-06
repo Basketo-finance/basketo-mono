@@ -1,5 +1,4 @@
 import Link from "next/link";
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,12 +9,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { styled } from "@mui/material/styles";
+import { useState } from "react";
 
 const pages = ["Explore", "Learn"];
 
 const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -29,44 +28,44 @@ const Navbar = () => {
     <AppBar
       position="fixed"
       sx={{
-        backgroundColor: "#fff",
-        color: "#000",
         boxShadow: "none",
-        maxHeight: "60px",
+        height: "75px",
+        background: "rgba(0,0,0,0)",
+        backdropFilter: "blur(30px)",
+        display:"flex",alignItems:'center'
       }}
     >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-          <div style={{ fontSize: "24px", fontWeight: "bold" }}>
+      <Container sx={{height:'100%',maxWidth:"lg"}}>
+        <Toolbar sx={{ display:'flex',justifyContent: "space-between",height:'100%' }}>
+          <Box sx={{ fontSize: "24px" }}>
             <Link href="/">
-              <a>
+              {/* <a>
                 <img
                   src="/images/logo_green.png"
                   alt="basketo-logo"
                   width={"200px"}
                 />
-              </a>
+              </a> */}Basketo
             </Link>
-          </div>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex",} }}>
+          </Box>
+          <Box sx={{ display: { xs: "none", md: "flex",} }}>
             {pages.map((page) => (
-              <Button
+              <Button sx={{margin:'0px 12px'}}
                 key={page}
                 onClick={handleCloseNavMenu}
-                variant="text"
-                color="success"
+                variant="text" color="primary"
               >
                 {page}
               </Button>
             ))}
-          </Box> */}
+          </Box>
 
           <div style={{ display: "flex" }}>
             <Link href="/explore">
               <Button variant="outlined">App</Button>
             </Link>
 
-            {/* <Box sx={{ display: { xs: "block", md: "none" } }}>
+            <Box sx={{ display: { xs: "block", md: "none" } }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -92,7 +91,7 @@ const Navbar = () => {
                   </MenuItem>
                 ))}
               </Menu>
-            </Box> */}
+            </Box>
           </div>
         </Toolbar>
       </Container>

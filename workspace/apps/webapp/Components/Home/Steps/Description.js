@@ -1,5 +1,4 @@
 import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
-import React from "react";
 
 const Description = ({ description }) => {
   return (
@@ -7,7 +6,7 @@ const Description = ({ description }) => {
       {description.map(({ id, icon: Icon, text }) => (
         <ListItem key={id} disablePadding disableGutters>
           <ListItemIcon>
-              <Icon sx={{ color: '#0B754E', fontSize: '32px' }} />
+              <Icon color='primary' />
           </ListItemIcon>
           <ListItemText
             primary={text}

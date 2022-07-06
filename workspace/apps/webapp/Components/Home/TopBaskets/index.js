@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   CardActions,
   CardHeader,
@@ -9,9 +8,8 @@ import {
   styled,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const BasketCard = styled(Card)(({ theme }) => ({
   borderRadius: "25px",
@@ -50,28 +48,19 @@ const TopBaskets = () => {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 2, mb: 2 }}>
-      <Grid
-        display={"flex"}
-        flexDirection={"row"}
-        justifyContent={"space-between"}
-      >
-        <Typography
-          color={"secondary.dark"}
+      <Typography
+          variant='subtitle1'
           sx={{
-            mb: { xs: "1rem", sm: "3rem" },
-            letterSpacing: "3px",
+            letterSpacing: "0.23em",
             textAlign: { xs: "center", sm: "left" },
+            margin:'1em 0em'
           }}
         >
           TRENDING BASKETS
-        </Typography>
-        {/* <Button variant="text" color="success" endIcon={<ArrowForwardIcon />}>
-          See More
-        </Button> */}
-      </Grid>
+      </Typography>
       <Grid
         container
-        columns={{ xs: 4, sm: 8, md: 12 }}
+        columns={{ xs: 4, md: 12 }}
         spacing={{ md: 4, xs: 2 }}
       >
         {baskets &&
@@ -86,7 +75,7 @@ const TopBaskets = () => {
                   component="img"
                   height="150"
                   image="/graph.png"
-                  sx={{ padding: "10px 10px", borderRadius: "25px" }}
+                  sx={{ padding: "10px 10px", borderRadius: "12px" }}
                 />
                 <div style={{ padding: "0 10px" }}>
                   <hr style={{ color: "#CCCCCC" }} />

@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "./styles.css";
 import { ThemeProvider } from "@mui/material/styles";
 import lightTheme from "../utils/theme/lightTheme";
 import darkTheme from "../utils/theme/darkTheme";
@@ -9,7 +9,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 
 const queryClient = new QueryClient();
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   const prefersLightMode = useMediaQuery("(prefers-color-scheme: light)");
   const [mode, setMode] = useState("light");
 
@@ -33,13 +33,13 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={ mode=='light' ? lightTheme: darkTheme}>
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </ThemeProvider>
   );
 }
 
-export default MyApp;
+export default App;

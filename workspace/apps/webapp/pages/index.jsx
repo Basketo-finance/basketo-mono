@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "../Components/Footer";
 import Hero from "../Components/Home/Hero";
 import TopBaskets from "../Components/Home/TopBaskets";
@@ -8,10 +7,11 @@ import CreateBaskets from "../Components/Home/CreateBaskets";
 import Steps from "../Components/Home/Steps";
 import Subscription from "../Components/Home/Subscription";
 import FAQ from "../Components/Home/FAQ";
+import {Paper} from "@mui/material"
 
 const index = () => {
   return (
-    <>
+    <Paper variant='window' sx={{overflowX:'hidden'}} >
       <Navbar />
       <div style={{ paddingTop: "70px" }}>
         <Hero />
@@ -23,7 +23,7 @@ const index = () => {
         <FAQ />
         <Footer />
       </div>
-    </>
+    </Paper>
   );
 };
 

@@ -5,9 +5,9 @@ import SpokeIcon from '@mui/icons-material/Spoke';
 import MarkEmailUnreadOutlinedIcon from '@mui/icons-material/MarkEmailUnreadOutlined';
 import MuiRouteOutlinedIcon from '@mui/icons-material/RouteOutlined';
 
-const RouteOutlinedIcon = (props) => (
-  <MuiRouteOutlinedIcon sx={{ transform: 'rotateZ(90deg) scaleX(-1)', ...props.sx }} />
-);
+const RouteIcon = ({...props})=>(
+  <MuiRouteOutlinedIcon {...props} style={{transform:"rotate(90deg)"}} />
+)
 
 export const stepOne = [
   {
@@ -43,7 +43,7 @@ export const stepThree = [
   },
   {
     id: 2,
-    icon: RouteOutlinedIcon,
+    icon: RouteIcon,
     text: "Baskets are fully customisable. Opt-in for rebalance updates by managers or make your own rebalances. ",
   },
 ];

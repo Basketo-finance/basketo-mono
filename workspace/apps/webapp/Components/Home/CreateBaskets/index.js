@@ -5,16 +5,16 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Link
 } from "@mui/material";
-import Steps from "../../Common/Steps";
+import Steps from "../Steps/Steps";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import MuiPaymentsOutlinedIcon from "@mui/icons-material/PaymentsOutlined";
 import HandymanOutlinedIcon from "@mui/icons-material/HandymanOutlined";
-import styles from "./CreateBaskets.module.css";
 
-const PaymentsOutlinedIcon = ({ sx }) => (
-  <MuiPaymentsOutlinedIcon sx={{ transform: "scaleX(-1)", ...sx }} />
+const PaymentsOutlinedIcon = ( props ) => (
+  <MuiPaymentsOutlinedIcon style={{ transform: "scaleX(-1)"}} {...props} />
 );
 
 const CreateBasketsDescription = () => {
@@ -42,7 +42,7 @@ const CreateBasketsDescription = () => {
         {points.map(({ id, icon: Icon, text }) => (
           <ListItem key={id} disablePadding disableGutters>
             <ListItemIcon>
-              <Icon sx={{ color: "#0B754E", fontSize: "32px" }} />
+              <Icon color="primary" />
             </ListItemIcon>
 
             <ListItemText
@@ -55,13 +55,13 @@ const CreateBasketsDescription = () => {
 
       <p>
         Learn more about{" "}
-        <a href="#" className={styles.link}>
+        <Link href="#">
           Basketo for DAOs and Pro-Investors
-        </a>
+        </Link>
         . You can also create{" "}
-        <a href="#" className={styles.link}>
+        <Link href="#">
           Private Baskets
-        </a>{" "}
+        </Link>{" "}
         for personal asset management.
       </p>
 

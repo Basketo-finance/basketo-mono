@@ -6,7 +6,7 @@ const partners = [
   {
     name: "Your Story",
     img: {
-      src: "/images/your-story.svg",
+      src: "/images/your-story.png",
       width: "25%",
       minWidth: "80px",
     },
@@ -14,7 +14,7 @@ const partners = [
   {
     name: "T-Hub",
     img: {
-      src: "/images/t-hub.svg",
+      src: "/images/t-hub.png",
       width: "30%",
       minWidth: "65px",
     },
@@ -22,8 +22,8 @@ const partners = [
   {
     name: "Inevitable",
     img: {
-      src: "/images/inevitable.svg",
-      width: "80%",
+      src: "/images/inevitable.png",
+      width: "40%",
       minWidth: "90px",
     },
   },

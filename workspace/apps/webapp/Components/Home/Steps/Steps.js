@@ -34,14 +34,14 @@ const Steps = ({ stepCount, title, description, flexDirection, imgUrl }) => {
         md={5}
         lg={4.5}
       >
-        <Typography color={"secondary.dark"} fontSize="0.9rem" sx={{ mb: 2 }}>
+        <Typography fontSize="0.9rem" sx={{ mb: 2 }}>
           {stepCount}
         </Typography>
         <Typography
           variant="h1"
           component="div"
           fontSize="2rem"
-          sx={{ mb: 2, color: "secondary.dark" }}
+          sx={{ mb: 2}}
         >
           {title}
         </Typography>
@@ -49,7 +49,6 @@ const Steps = ({ stepCount, title, description, flexDirection, imgUrl }) => {
         <Typography
           variant="body1"
           component="div"
-          color={"secondary.dark"}
           fontSize="0.9rem"
           sx={{ mb: 2 }}
         >

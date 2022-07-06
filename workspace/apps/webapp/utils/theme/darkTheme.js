@@ -80,7 +80,8 @@ const darkTheme = createTheme({
             variants:[
                 {
                     props:{variant:'window'},
-                    style:{borderRadius:'0px',boxShadow:'none',zIndex:'0',backgroundColor:'#111',width: "100vw",minHeight: "100vh"}
+                    style:{borderRadius:'0px',boxShadow:'none',zIndex:'0',backgroundColor:'#111',
+                    width: "100vw",minHeight: "100vh", overflowX:'hidden'}
                 }   
             ]
         }
