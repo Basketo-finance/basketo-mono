@@ -1,5 +1,4 @@
-import { Button, Container, Grid, Typography } from "@mui/material";
-import React from "react";
+import { Grid, Typography } from "@mui/material";
 
 const Steps = ({ stepCount, title, description, flexDirection, imgUrl }) => {
   return (
@@ -34,14 +33,13 @@ const Steps = ({ stepCount, title, description, flexDirection, imgUrl }) => {
         md={5}
         lg={4.5}
       >
-        <Typography fontSize="0.9rem" sx={{ mb: 2 }}>
+        <Typography fontSize="0.9rem" sx={{ mb: 2, letterSpacing:'0.23em' }} variant='subtitle2' >
           {stepCount}
         </Typography>
         <Typography
-          variant="h1"
           component="div"
           fontSize="2rem"
-          sx={{ mb: 2}}
+          sx={{ mb: 2, lineHeight:'1.2em'}}
         >
           {title}
         </Typography>

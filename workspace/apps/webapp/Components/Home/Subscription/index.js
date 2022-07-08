@@ -4,46 +4,28 @@ import {
     Container,
     Grid,
     InputAdornment,
-    styled,
-    TextField as MuiTextField,
-    Typography
+    TextField,
+    Typography,
+    Paper,
+    useTheme
 } from '@mui/material';
 import MarkEmailUnreadOutlinedIcon from '@mui/icons-material/MarkEmailUnreadOutlined';
 
-const colors = {
-    main: '#0B754E',
-    bg: '#E5FFF6',
-    inputBg: '#fff',
-};
-
-const TextField = styled(MuiTextField)(() => ({
-    '& .MuiOutlinedInput-root': {
-        'background': colors.inputBg,
-        '& fieldset': {
-            borderColor: colors.main,
-            borderWidth: '2px',
-        },
-        '& ::placeholder': {
-            color: colors.main,
-            fontWeight: 'bold',
-        },
-    },
-}));
-
 const Subscription = () => {
-
+    const theme = useTheme();
     const [email, setEmail] = useState('');
 
     function handleSubmit(e) {
-
         e.preventDefault();
-        console.log(email);
         setEmail('');
     }
 
     return (
 
-        <div style={{ margin: '4rem 0', padding: '4rem 0', background: colors.bg }}>
+        <Paper variant='section' color='primary' style={{
+        margin: '4rem 0', 
+        padding: '4rem 0', 
+        }} >
             <Container maxWidth="lg">
                 <Grid
                     container
@@ -58,7 +40,6 @@ const Subscription = () => {
                         sx={{ mb: { xs: 2, md: 0 } }}
                     >
                         <Typography
-                            variant="h1"
                             component="div"
                             fontSize="2rem"
                             sx={{ mb: 2 }}
@@ -90,7 +71,7 @@ const Subscription = () => {
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">
-                                            <MarkEmailUnreadOutlinedIcon style={{ color: colors.main }} />
+                                            <MarkEmailUnreadOutlinedIcon />
                                         </InputAdornment>
                                     ),
                                 }}
@@ -111,7 +92,7 @@ const Subscription = () => {
                     </Grid>
                 </Grid>
             </Container>
-        </div>
+        </Paper>
     );
 };
 

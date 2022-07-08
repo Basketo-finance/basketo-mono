@@ -12,6 +12,7 @@ import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 import Graph from '../../Components/Common/Graph';
 import basketsData from '../../Components/Explore/basketsData';
+import { Paper } from '@mui/material';
 
 const Basket = () => {
 
@@ -42,7 +43,7 @@ const Basket = () => {
 
 	return (
 
-		<>
+		<Paper variant='window' >
 			<Navbar />
             <div style={{ paddingTop: '70px' }}>
 				<Container maxWidth="lg" sx={{ mt: 2, mb: 4 }}>
@@ -204,7 +205,7 @@ const Basket = () => {
 				</Container>
                 <Footer />
             </div>
-		</>
+		</Paper>
 	);
 };
 

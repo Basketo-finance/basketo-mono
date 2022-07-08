@@ -6,7 +6,7 @@ const Description = ({ description }) => {
       {description.map(({ id, icon: Icon, text }) => (
         <ListItem key={id} disablePadding disableGutters>
           <ListItemIcon>
-              <Icon color='primary' />
+              <Icon  />
           </ListItemIcon>
           <ListItemText
             primary={text}

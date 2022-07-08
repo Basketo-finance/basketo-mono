@@ -3,6 +3,7 @@ import Navbar from '../../Components/Navbar';
 import SearchBar from '../../Components/Explore/SearchBar';
 import Baskets from '../../Components/Explore/Baskets';
 import Footer from '../../Components/Footer';
+import { Paper } from '@mui/material';
 
 const filters = {
     growthRate: 'any',
@@ -62,7 +63,7 @@ const Explore = () => {
 
     return (
 
-        <>
+        <Paper variant='window' >
             <Navbar />
             <div style={{ paddingTop: '70px' }}>
                 <SearchBar
@@ -74,7 +75,7 @@ const Explore = () => {
                 <Baskets queryString={ queryString } />
                 <Footer />
             </div>
-        </>
+        </Paper>
     );
 };
 

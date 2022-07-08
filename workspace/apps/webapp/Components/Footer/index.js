@@ -7,6 +7,10 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import { Paper } from "@mui/material";
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import { useTheme } from '@mui/material';
 
 const socialLinks = [
   { title: "telegram", url: "https://t.me/basketofinance", icon: TelegramIcon },
@@ -23,8 +27,20 @@ const quickLinks = [
 ];
 
 const Footer = () => {
+   
+  const currentTheme = useTheme();
+
+  const handleThemeToggle = ()=>{
+    if(typeof window !== 'undefined'){
+      window.document.dispatchEvent(
+        new CustomEvent("modeChange",{
+          detail:{to:currentTheme.palette.mode==='dark' ? 'light' : 'dark'}
+        }));
+    }
+  } 
+
   return (
-    <footer className={styles.footer}>
+    <Paper variant='section' color='secondary' sx={{ padding:'30px 20px'}} >
       <Container maxWidth="lg">
         <Grid container>
           <Grid item xs={12} md={6}>
@@ -33,8 +49,7 @@ const Footer = () => {
               component="div"
               sx={{ fontFamily: "Work Sans", mb: 2, fontSize: "2rem" }}
             >
-              <span style={{ fontWeight: 600 }}>Basketo</span> finance{" "}
-              <sup>TM</sup>
+              Basketo <span style={{fontWeight:'300'}}>finance</span>{" "}&#8482;
             </Typography>
 
             <div className={styles.address}>
@@ -88,8 +103,12 @@ const Footer = () => {
             </div>
           </Grid>
         </Grid>
+        <Button variant='outlined' onClick={handleThemeToggle}
+        startIcon={currentTheme.palette.mode==='dark'? <LightModeIcon/> : <DarkModeIcon/>} >
+        {currentTheme.palette.mode==='dark'? "Light Mode" : "Dark Mode"}
+        </Button>
       </Container>
-    </footer>
+    </Paper>
   );
 };
 

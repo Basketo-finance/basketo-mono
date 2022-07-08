@@ -1,18 +1,16 @@
 const colorPalette = {
   primary: {
-    lighter: "#DCFFEF",
-    light: "#A0F3CF",
-    main: "#6EDFAD",
-    dark: "#31644D",
-    darker: "#002917",
+    lighter:'#E5FFF6',
+    light: "#B0FFE2",
+    main: "#73FAC8",
+    dark: "#0B754E",
+    darker: "#00281A",
     inherit: "rgba(0,0,0,0)",
   },
   secondary: {
-    lighter: "#FFF4E3",
-    light: "#FFDCA8",
-    main: "#FAC77C",
-    dark: "#755B34",
-    darker: "#301D00",
+    white: "#FAFAFA",
+    grey: "#959595",
+    black: "#000000",
     inherit: "rgba(0,0,0,0)",
   },
 };

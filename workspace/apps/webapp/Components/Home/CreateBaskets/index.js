@@ -12,6 +12,7 @@ import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import MuiPaymentsOutlinedIcon from "@mui/icons-material/PaymentsOutlined";
 import HandymanOutlinedIcon from "@mui/icons-material/HandymanOutlined";
+import { useTheme } from "@mui/system";
 
 const PaymentsOutlinedIcon = ( props ) => (
   <MuiPaymentsOutlinedIcon style={{ transform: "scaleX(-1)"}} {...props} />
@@ -42,7 +43,7 @@ const CreateBasketsDescription = () => {
         {points.map(({ id, icon: Icon, text }) => (
           <ListItem key={id} disablePadding disableGutters>
             <ListItemIcon>
-              <Icon color="primary" />
+              <Icon />
             </ListItemIcon>
 
             <ListItemText
@@ -77,13 +78,14 @@ const CreateBasketsDescription = () => {
 };
 
 const CreateBaskets = () => {
+  const {palette:{mode}} = useTheme();
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Steps
         title="Create Baskets & Monetize them."
         description={<CreateBasketsDescription />}
         flexDirection="row-reverse"
-        imgUrl="/images/create.png"
+        imgUrl={`/images${mode=='dark'?'D':''}/create.png`}
       />
     </Container>
   );
