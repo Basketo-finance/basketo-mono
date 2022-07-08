@@ -150,6 +150,14 @@ const darkTheme = createTheme({
     },
     MuiListItemIcon:{
       styleOverrides:{root:{color:colorPalette.primary.main}}
+    },
+    MuiTypography:{
+      variants:[
+        {
+          props:{variant:'subtitle2'},
+          style:{letterSpacing:'0.23em'}
+        }
+      ]
     }
   },
 });

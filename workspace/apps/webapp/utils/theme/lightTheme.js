@@ -149,6 +149,14 @@ const lightTheme = createTheme({
     },
     MuiListItemIcon:{
       styleOverrides:{root:{color:colorPalette.primary.dark}}
+    },
+    MuiTypography:{
+      variants:[
+        {
+          props:{variant:'subtitle2'},
+          style:{letterSpacing:'0.23em'}
+        }
+      ]
     }
   },
 });

@@ -47,12 +47,12 @@ const TopBaskets = () => {
   ]);
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 2, mb: 2 }}>
+    <Container maxWidth="lg" sx={{ mt: 5, mb: 2 }}>
       <Typography
           variant='subtitle2'
           sx={{
             letterSpacing: "0.23em",
-            textAlign: { xs: "center", sm: "left" },
+            textAlign: "left",
             margin:'1em 0em'
           }}
         >

@@ -16,9 +16,9 @@ const Hero = () => {
     >
       <Typography 
       sx={{textAlign:'center', 
-          fontSize:'75px',
+          fontSize:{xs:'42px',md:'75px'},
           fontWeight:'400',
-          lineHeight:'1em',
+          lineHeight:'1.2em',
           mb:'30px'}} >
       Invest in diversified crypto portfolios with&nbsp;
       <span style={{ borderBottom:'3px solid #000' }}>Basketo</span>

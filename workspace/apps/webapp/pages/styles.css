@@ -16,7 +16,23 @@ a {
   box-sizing: border-box;
 }
 
-body.dark-mode {
-  color: #fcfcfd !important;
-  background-color: #141416;
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #777;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #B0FFE2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #73FAC8;
 }

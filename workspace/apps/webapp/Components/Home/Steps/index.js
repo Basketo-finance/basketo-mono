@@ -12,7 +12,6 @@ const HowItWorks = () => {
         variant='subtitle2'
           sx={{
             mb: { xs: "1rem", md: "3rem" },
-            letterSpacing: "3px",
           }}
         >
           HOW IT WORKS
