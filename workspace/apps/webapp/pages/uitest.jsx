@@ -3,6 +3,8 @@ import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { useTheme } from '@mui/material';
+import { BasketCard } from '@basketo/web-ui';
+
 
 const Uitest = () => {
   const currentTheme = useTheme();
@@ -45,7 +47,7 @@ const Uitest = () => {
         <TextField variant='outlined' color='primary' label='textfield' placeholder='outlined primary !icon' /><br/><br/>
         <Paper variant='section' color="primary" sx={{width:'100%', height:'200px'}} >Paper | section primary</Paper>
         <Paper variant='section' color="secondary" sx={{width:'100%', height:'200px'}} >Paper | section secondary</Paper>
-
+        <BasketCard sx={{margin:'20px'}} />
     </Paper>
 )
 }
