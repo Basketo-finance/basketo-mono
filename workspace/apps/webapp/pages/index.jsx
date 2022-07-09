@@ -7,7 +7,7 @@ import CreateBaskets from "../Components/Home/CreateBaskets";
 import Steps from "../Components/Home/Steps";
 import Subscription from "../Components/Home/Subscription";
 import FAQ from "../Components/Home/FAQ";
-import {Paper} from "@mui/material"
+import {Paper} from "@mui/material";
 
 const index = () => {
   return (

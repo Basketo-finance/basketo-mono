@@ -3,55 +3,57 @@ import colorPalette from './palette.js';
 
 const buttonStyle = (variant, color) => ({
   backgroundColor: colorPalette[color][variant == 'contained'? 'main':'inherit'],
-  color: colorPalette[color][variant=='text'?'dark':'darker'],
+  color: colorPalette[color][variant=='contained'?'darker':'light'],
   border: `1.5px solid ${
     colorPalette[color][
         variant === 'outlined'
-        ? 'darker'
+        ? 'light'
         : 'inherit'
     ]
   }`,
+  transition: '300ms',
   '&:hover': {
     backgroundColor:
-      colorPalette[color][variant === 'contained' ? 'main' : 'lighter'],
+      colorPalette[color][variant === 'contained' ? 'light' : 'darker'],
     border: `1.5px solid ${
-      colorPalette[color][variant === 'text' ? 'inherit' : 'darker']
+      colorPalette[color][variant === 'text'||variant=='contained' ? 'inherit' : 'main']
     }`,
-    boxShadow:'none'
+    transform: 'translate(0px,-1.5px)'
   },
 });
 
 const textFieldStyle = (variant, color) => ({
   '.MuiInputLabel-root': {
-    color: `${colorPalette[color].dark} !important`,
+    color: `${colorPalette[color].light} !important`,
     fontWeight:'500'
   },
   '& .MuiOutlinedInput-root fieldset': {
-    border:`1.5px solid ${colorPalette[color][color=='primary'?'darker':'black']} !important`
+    border:`1.5px solid ${colorPalette[color][color=='primary'?'light':'white']} !important`
   },
   '& .MuiInput-underline:before': {
-    borderBottomColor: colorPalette[color][color=='primary'?'darker':'black']
+    borderBottomColor: colorPalette[color][color=='primary'?'light':'white']
   },
   '& .MuiInput-underline:hover:before': {
-    borderBottomColor: colorPalette[color][color=='primary'?'darker':'black'],
+    borderBottomColor: colorPalette[color][color=='primary'?'light':'white'],
   },
   '& .MuiInput-underline:after': {
-    borderBottomColor: colorPalette[color][color=='primary'?'dark':'black'],
+    borderBottomColor: colorPalette[color][color=='primary'?'main':'white'],
   },
 });
 
-const lightTheme = createTheme({
+const darkTheme = createTheme({
   typography: { fontFamily: 'Work Sans' },
   palette: {
-    mode: 'light',
+    mode: 'dark',
+    divider:'#787878',
     primary: {
-      light: colorPalette.primary.lighter,
+      light: colorPalette.primary.light,
       main: colorPalette.primary.main,
       dark: colorPalette.primary.dark,
       contrastText: colorPalette.primary.darker
     },
     secondary: {
-      main: colorPalette.secondary.black,
+      main: colorPalette.secondary.white,
     },
   },
   components: {
@@ -69,7 +71,7 @@ const lightTheme = createTheme({
           "&:hover":{
             borderWidth:'1.5px',
             transform: 'translate(0px,-1.5px)'
-          }
+            }
         },
       },
       variants: [
@@ -120,7 +122,7 @@ const lightTheme = createTheme({
             borderRadius: '0px',
             boxShadow: 'none',
             zIndex: '0',
-            backgroundColor: '#fff',
+            backgroundColor: '#0E0E0E',
             width: '100vw',
             minHeight: '100vh',
             overflowX: 'hidden',
@@ -131,7 +133,7 @@ const lightTheme = createTheme({
           style:{
             borderRadius: '0px',
             boxShadow: 'none',
-            backgroundColor: colorPalette.primary.lighter,
+            backgroundColor: colorPalette.primary.darker,
           }
         },
         {
@@ -139,16 +141,16 @@ const lightTheme = createTheme({
           style:{
             borderRadius: '0px',
             boxShadow: 'none',
-            backgroundColor: "#f2f2f2",
+            backgroundColor: "#1F1F1F",
           }
         }
       ],
     },
     MuiLink:{
-      styleOverrides:{root:{color:colorPalette.primary.dark, fontWeight:'600'}}
+      styleOverrides:{root:{color:colorPalette.primary.main, fontWeight:'600'}}
     },
     MuiListItemIcon:{
-      styleOverrides:{root:{color:colorPalette.primary.dark}}
+      styleOverrides:{root:{color:colorPalette.primary.main}}
     },
     MuiTypography:{
       variants:[
@@ -157,8 +159,18 @@ const lightTheme = createTheme({
           style:{letterSpacing:'0.23em'}
         }
       ]
+    },
+    MuiCard:{
+      variants:[
+        {
+          props:{variant:'outlined'},
+          style:{
+            border:"1.5px solid #787878",
+          }
+        }
+      ]
     }
   },
 });
 
-export default lightTheme;
+export default darkTheme;

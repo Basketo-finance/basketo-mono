@@ -1,51 +1,34 @@
 import {
-  Card,
-  CardActions,
-  CardHeader,
-  CardMedia,
   Container,
   Grid,
-  styled,
+  Tooltip,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { BasketCard } from "@basketo/web-ui";
 
-const BasketCard = styled(Card)(({ theme }) => ({
-  borderRadius: "25px",
-  border: "1px solid #CCCCCC",
-  boxShadow: "none",
-  "&:hover": {
-    // boxShadow: "5px 5px #CCCCCC",
-    cursor: "pointer",
-  },
-}));
+const baskets =  [{
+  title: "Defi Basket",
+  symbol: "DEFB",
+  growth: {percent:"+2.03",period:"hour"},
+  basketeer: "Defi Dao",
+},
+{
+  title: "Hodl Basket",
+  symbol: "HODL",
+  growth: {percent:"+1.03",period:"hour"},
+  basketeer: "Defi Dao",
+},
+{
+  title: "Stable Basket",
+  symbol: "STBLB",
+  growth: {percent:"+0.43",period:"hour"},
+  basketeer: "Arch Dao",
+},
+]
+
 
 const TopBaskets = () => {
-  const [baskets, setBaskets] = useState([
-    {
-      id: 1,
-      name: "Super Basket",
-      symbol: "SUPB",
-      growth: "+2.03% in the past hour",
-      baskete: "SuperTeam Dao",
-    },
-    {
-      id: 2,
-      name: "Super Basket",
-      symbol: "SUPB",
-      growth: "+2.03% in the past hour",
-      baskete: "SuperTeam Dao",
-    },
-    {
-      id: 3,
-      name: "Super Basket",
-      symbol: "SUPB",
-      growth: "+2.03% in the past hour",
-      baskete: "SuperTeam Dao",
-    },
-  ]);
-
+   
   return (
     <Container maxWidth="lg" sx={{ mt: 5, mb: 2 }}>
       <Typography
@@ -64,32 +47,13 @@ const TopBaskets = () => {
         spacing={{ md: 4, xs: 2 }}
       >
         {baskets &&
-          baskets.map((basket) => (
-            <Grid item xs={4} key={basket.id}>
-              <BasketCard className="myContainer">
-                <CardHeader
-                  title={basket.name}
-                  subheader={`${basket.symbol} | ${basket.growth}`}
-                />
-                <CardMedia
-                  component="img"
-                  height="150"
-                  image="/graph.png"
-                  sx={{ padding: "10px 10px", borderRadius: "12px" }}
-                />
-                <div style={{ padding: "0 10px" }}>
-                  <hr style={{ color: "#CCCCCC" }} />
+          baskets.map((basket, i) => (
+            <Grid item xs={4} key={i}>
+              <Tooltip title={<Typography variant='h6' >Coming soon!!</Typography>} >
+                <div>
+                <BasketCard data={basket} showGrowth  />
                 </div>
-                <CardActions sx={{ gap: "0.5rem" }}>
-                  <AccountCircleIcon fontSize="large" color="text.secondary" />
-                  <Typography variant="body2" color="text.secondary">
-                    {basket.baskete}
-                  </Typography>
-                </CardActions>
-                <div className="overlay">
-                  <div className="text">Coming Soon!!</div>
-                </div>
-              </BasketCard>
+              </Tooltip>
             </Grid>
           ))}
       </Grid>
