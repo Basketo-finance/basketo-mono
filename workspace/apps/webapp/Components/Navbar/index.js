@@ -37,7 +37,7 @@ const Navbar = () => {
     >
       <Container sx={{height:'100%',maxWidth:"lg"}}>
         <Toolbar sx={{ display:'flex',justifyContent: "space-between",height:'100%' }}>
-          <Box sx={{ fontSize: "24px" }}>
+          <Box sx={{ fontSize: {xs:'16px',md:"24px"} }}>
             <Link href="/">
               {/* <a>
                 <img
@@ -48,10 +48,11 @@ const Navbar = () => {
               </a> */}Basketo
             </Link>
           </Box>
-          <Box sx={{ display: { xs: "none", md: "flex",} }}>
+          <Box>
             {pages.map((page) => (
-              <Button sx={{margin:'0px 12px'}}
+              <Button
                 key={page}
+                sx={{fontSize:{xs:'10px',md:'16px'}}} 
                 onClick={handleCloseNavMenu}
                 variant="text" color="primary"
               >
@@ -62,10 +63,10 @@ const Navbar = () => {
 
           <div style={{ display: "flex" }}>
             <Link href="/explore">
-              <Button variant="outlined">App</Button>
+              <Button sx={{fontSize:{xs:'10px',md:'16px'}}} variant="outlined" >App</Button>
             </Link>
 
-            <Box sx={{ display: { xs: "block", md: "none" } }}>
+            {/* <Box sx={{ display: { xs: "block", md: "none" } }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -91,7 +92,7 @@ const Navbar = () => {
                   </MenuItem>
                 ))}
               </Menu>
-            </Box>
+            </Box> */}
           </div>
         </Toolbar>
       </Container>

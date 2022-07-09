@@ -21,7 +21,7 @@ const Hero = () => {
           lineHeight:'1.2em',
           mb:'30px'}} >
       Invest in diversified crypto portfolios with&nbsp;
-      <span style={{ borderBottom:'3px solid #000' }}>Basketo</span>
+      <span style={{ borderBottom:'3px solid', borderColor:'secondary.main' }}>Basketo</span>
       </Typography>
     
       <Link href="/explore" >
