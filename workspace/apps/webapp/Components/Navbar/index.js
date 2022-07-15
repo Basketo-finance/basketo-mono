@@ -2,27 +2,14 @@ import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { useState } from "react";
+import { IconButton, useMediaQuery } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const pages = ["Explore", "Learn"];
 
 const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
 
   return (
     <AppBar
@@ -31,29 +18,24 @@ const Navbar = () => {
         boxShadow: "none",
         height: "75px",
         background: "rgba(0,0,0,0)",
-        backdropFilter: "blur(30px)",
-        display:"flex",alignItems:'center'
+        backdropFilter: "blur(10px)",
+        display:"flex",alignItems:'center',
+        zIndex:'10',
       }}
     >
       <Container sx={{height:'100%',maxWidth:"lg"}}>
         <Toolbar sx={{ display:'flex',justifyContent: "space-between",height:'100%' }}>
-          <Box sx={{ fontSize: {xs:'16px',md:"24px"} }}>
+          <Box sx={{ fontSize: {xs:'14px',md:"20px"},display:'flex',alignItems:'center' }}>
             <Link href="/">
-              {/* <a>
-                <img
-                  src="/images/logo_green.png"
-                  alt="basketo-logo"
-                  width={"200px"}
-                />
-              </a> */}Basketo
+              Basketo
             </Link>
           </Box>
           <Box>
             {pages.map((page) => (
               <Button
                 key={page}
-                sx={{fontSize:{xs:'10px',md:'16px'}}} 
-                onClick={handleCloseNavMenu}
+                sx={{fontSize:{xs:'10px',md:'14px'}}} 
+                // onClick={}
                 variant="text" color="primary"
               >
                 {page}
@@ -63,7 +45,7 @@ const Navbar = () => {
 
           <div style={{ display: "flex" }}>
             <Link href="/explore">
-              <Button sx={{fontSize:{xs:'10px',md:'16px'}}} variant="outlined" >App</Button>
+              <Button sx={{fontSize:{xs:'10px',md:'14px'}}} variant="outlined" >App</Button>
             </Link>
 
             {/* <Box sx={{ display: { xs: "block", md: "none" } }}>
