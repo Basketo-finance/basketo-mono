@@ -67,7 +67,7 @@ const darkTheme = createTheme({
           boxSizing: 'border-box',
           boxShadow: 'none',
           borderWidth:'1.5px',
-          transition:'300ms',
+          transition:'200ms',
           "&:hover":{
             borderWidth:'1.5px',
             transform: 'translate(0px,-1.5px)'
@@ -169,6 +169,15 @@ const darkTheme = createTheme({
           }
         }
       ]
+    },
+    MuiBottomNavigation:{
+      styleOverrides:{
+        root:{
+          "& .Mui-selected":{
+            color:`${colorPalette.primary.main} !important`
+          }
+        }
+      }
     }
   },
 });

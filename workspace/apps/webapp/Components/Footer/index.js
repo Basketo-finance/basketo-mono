@@ -11,6 +11,7 @@ import { Paper } from "@mui/material";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { useTheme } from '@mui/material';
+import { toggleTheme } from "@basketo/web-ui";
 
 const socialLinks = [
   { title: "telegram", url: "https://t.me/basketofinance", icon: TelegramIcon },
@@ -31,12 +32,7 @@ const Footer = () => {
   const currentTheme = useTheme();
 
   const handleThemeToggle = ()=>{
-    if(typeof window !== 'undefined'){
-      window.document.dispatchEvent(
-        new CustomEvent("modeChange",{
-          detail:{to:currentTheme.palette.mode==='dark' ? 'light' : 'dark'}
-        }));
-    }
+    toggleTheme({to:currentTheme.palette.mode=='dark'?'light':'dark'});
   } 
 
   return (

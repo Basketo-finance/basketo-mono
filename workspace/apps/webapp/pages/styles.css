@@ -21,6 +21,15 @@ a {
   height: 5px;
 }
 
+::-webkit-scrollbar:horizontal {
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  display: none;
+}
 
 /* Track */
 ::-webkit-scrollbar-track {
