@@ -3,6 +3,38 @@
   "sourceRoot": "libs/contracts/src",
   "projectType": "library",
   "targets": {
+    "compile":{
+      "executor": "nx:run-commands",
+      "options": {
+        "command":"npx hardhat compile",
+        "cwd": "libs/contracts",
+        "parallel":false
+      }
+    },
+    "node":{
+      "executor": "nx:run-commands",
+      "options": {
+        "command":"npx hardhat node",
+        "cwd": "libs/contracts",
+        "parallel":false
+      }
+    },
+    "local-deploy":{
+      "executor": "nx:run-commands",
+      "options": {
+        "command":"npx hardhat run scripts/deploy.js --network localhost",
+        "cwd": "libs/contracts",
+        "parallel":false
+      }
+    },
+    "deploy":{
+      "executor": "nx:run-commands",
+      "options": {
+        "command":"npx hardhat run scripts/deploy.js --network {args.network}",
+        "cwd": "libs/contracts",
+        "parallel":false
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": [
