@@ -5,6 +5,7 @@
     "server": "apps/server",
     "web-ui": "libs/web/ui",
     "webapp": "apps/webapp",
-    "webapp-e2e": "apps/webapp-e2e"
+    "webapp-e2e": "apps/webapp-e2e",
+    "contracts": "libs/contracts"
   }
 }
